@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import os
 
-BASE_DIR = os.parth.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # 1. Load the model AND both encoders (done once when the app starts)
 with open(os.path.join(BASE_DIR,"model.pkl"), "rb") as f:
@@ -12,7 +12,7 @@ with open(os.path.join(BASE_DIR,"model.pkl"), "rb") as f:
 with open(os.path.join(BASE_DIR,"city_encoder.pkl"), "rb") as f:   
     city_encoder = pickle.load(f)
 
-with open("os.path.join(BASE_DIR,membership_encoder.pkl"), "rb") as f:
+with open(os.path.join(BASE_DIR,"membership_encoder.pkl"), "rb") as f:
     membership_encoder = pickle.load(f)
 
 # 2. Page title
