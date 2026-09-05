@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os
-import pickle, joblib
+import joblib
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
