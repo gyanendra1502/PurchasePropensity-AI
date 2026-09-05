@@ -2,10 +2,9 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os
+import pickle, joblib
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-import pickle, joblib, os
 
 def safe_load(path):
     if not os.path.exists(path):
