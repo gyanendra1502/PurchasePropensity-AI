@@ -5,6 +5,22 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+import pickle, joblib, os
+
+def safe_load(path):
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"{path} not found in deployment")
+    try:
+        return pickle.load(open(path, "rb"))
+    except Exception:
+        return joblib.load(path)
+
+model = safe_load(os.path.join(BASE_DIR, "model.pkl"))
+city_encoder = safe_load(os.path.join(BASE_DIR, "city_encoder.pkl"))
+membership_encoder = safe_load(os.path.join(BASE_DIR, "membership_encoder.pkl"))
+
+
+
 # 1. Load the model AND both encoders (done once when the app starts)
 with open(os.path.join(BASE_DIR,"model.pkl"), "rb") as f:
     model = pickle.load(f)
