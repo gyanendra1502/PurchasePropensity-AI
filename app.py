@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import joblib
 
 # 1. Load the model AND both encoders (done once when the app starts)
 with open("model.pkl", "rb") as f:
